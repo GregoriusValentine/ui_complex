@@ -144,6 +144,10 @@ class Ui extends StatelessWidget {
                         height: 80,
                         width: 80,
                         decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('assets/entin.jpg'),
+                            fit: BoxFit.cover,
+                          ),
                           shape: BoxShape.circle, color: Colors.orange
                         ),
                       ),
@@ -153,12 +157,31 @@ class Ui extends StatelessWidget {
                 },
               ),
             ),
-            Container(
-              height: h * 0.11,
-              color: Colors.green,
-            ),
+            // Container(
+            //   height: h * 0.11,
+            //   color: Colors.green,
+            // ),
             Expanded(
-              child: Container(color: Colors.yellow,)
+              child: Container(
+                child: GridView.builder(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3), 
+                  itemBuilder: (context, index){
+                    return Container(
+                      decoration: BoxDecoration(
+                        // color: Colors.grey.shade200,
+                        image: DecorationImage(
+                          image: AssetImage('assets/entin.jpg'),
+                          fit: BoxFit.cover,
+                        ),
+                        borderRadius: BorderRadius.circular(10)
+                      ),
+                      margin: EdgeInsets.all(5),
+                      height: 150,
+                      width: 150,
+                    );
+                  },
+                ),
+              )
             ),
           ],
         ),
